@@ -20,7 +20,7 @@ public class NumberRangeSummarizerImplementation implements NumberRangeSummarize
         }
         return numbers;
     }
-    /*
+
     public String summarizeCollection(Collection<Integer> input) {
         List<Integer> sortedNumbers = new ArrayList<>(input);
         sortedNumbers.sort(Integer::compareTo);
@@ -39,12 +39,12 @@ public class NumberRangeSummarizerImplementation implements NumberRangeSummarize
         summarizedNumbers.add(start == end ? String.valueOf(start) : start + "-" + end);
         return String.join(",", summarizedNumbers);
     }
-
-     */
     public static void main(String[] args) {
         NumberRangeSummarizerImplementation numberRangeSummarizerImplementation = new NumberRangeSummarizerImplementation();
-        Collection<Integer> numbers = numberRangeSummarizerImplementation.collect("1,3,6,7,8,12,13,14,15,21,22,23,24,31,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,Stephen");
-        System.out.println(numbers);
+        //Collection<Integer> numbers = numberRangeSummarizerImplementation.collect("1,3,6,7,8,12,13,14,15,21,22,23,24,31,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,Stephen");
+        Collection<Integer> numbers = numberRangeSummarizerImplementation.collect("1,3,6,7,8,12,13,14,15,21,22,23,24,31");
+        String summarizedNumbers = numberRangeSummarizerImplementation.summarizeCollection(numbers);
+        System.out.println(summarizedNumbers);
         //String summarizedNumbers = numberRangeSummarizerImplementation.summarizeCollection(numbers);
         //System.out.println(summarizedNumbers);
     }
