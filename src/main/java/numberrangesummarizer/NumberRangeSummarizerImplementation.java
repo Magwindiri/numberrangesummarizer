@@ -13,7 +13,11 @@ public class NumberRangeSummarizerImplementation implements NumberRangeSummarize
         for (String s : inputArray) {
             try {
                 int number = Integer.parseInt(s.trim());
-                numbers.add(number);
+
+                if (number > 0) {
+
+                    numbers.add(number);
+                }
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input");
             }
@@ -41,11 +45,8 @@ public class NumberRangeSummarizerImplementation implements NumberRangeSummarize
     }
     public static void main(String[] args) {
         NumberRangeSummarizerImplementation numberRangeSummarizerImplementation = new NumberRangeSummarizerImplementation();
-        //Collection<Integer> numbers = numberRangeSummarizerImplementation.collect("1,3,6,7,8,12,13,14,15,21,22,23,24,31,-2,-3,-4,-5,-6,-7,-8,-9,-10,-11,-12,-13,-14,-15,Stephen");
         Collection<Integer> numbers = numberRangeSummarizerImplementation.collect("1,3,6,7,8,12,13,14,15,21,22,23,24,31");
         String summarizedNumbers = numberRangeSummarizerImplementation.summarizeCollection(numbers);
         System.out.println(summarizedNumbers);
-        //String summarizedNumbers = numberRangeSummarizerImplementation.summarizeCollection(numbers);
-        //System.out.println(summarizedNumbers);
     }
 }
