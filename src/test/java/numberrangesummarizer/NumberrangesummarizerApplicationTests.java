@@ -20,4 +20,12 @@ public class NumberrangesummarizerApplicationTests {
 		//assert numbers.equals(expectedNumbers);
 		Assertions.assertEquals(numbers, expectedNumbers);
 	}
+	@Test
+	public void testSummarizeCollection() {
+		NumberRangeSummarizerImplementation numberRangeSummarizer = new NumberRangeSummarizerImplementation();
+		Collection<Integer> numbers = List.of(1, 3, 6, 7, 8, 12, 13, 14, 15, 21, 22, 23, 24, 31);
+		String summarizedNumbers = numberRangeSummarizer.summarizeCollection(numbers);
+		String expectedSummarizedNumbers = "1,3,6-8,12-15,21-24,31";
+		Assertions.assertEquals(summarizedNumbers, expectedSummarizedNumbers);
+	}
 }
